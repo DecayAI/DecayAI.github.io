@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
+import ChatbotReact from './chatbotReact';
 import './App.css';
 
 function App() {
+  const handleChatEvent = (event) => {
+    console.log('Chat event:', event);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ChatbotReact 
+        clientId="6fc1fdd2-e4cd-4621-a716-49a8971ad0c5" 
+        onChatEvent={handleChatEvent}
+      />
     </div>
   );
 }
